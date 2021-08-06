@@ -10,10 +10,9 @@ app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json()); //Using body parser middleware to parse Json inputs
 
 app.use('/api',require('./routes/api')); //Initialising the routes using a middleware
-
+app.use('/user',require('./routes/register'));
 //Error handling middleware
 app.use(function(err,req,res,next){
-  console.log('Error'); //if required this can be logged to the cmd console
   res.status(422).send({error:err.message});
 });
 

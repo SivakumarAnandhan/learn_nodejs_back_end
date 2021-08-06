@@ -13,7 +13,7 @@ app.use('/api',require('./routes/api')); //Initialising the routes using a middl
 
 //Error handling middleware
 app.use(function(err,req,res,next){
-  //console.log('Error'); //if required this can be logged to the cmd console
+  console.log('Error'); //if required this can be logged to the cmd console
   res.status(422).send({error:err.message});
 });
 
